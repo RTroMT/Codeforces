@@ -11,23 +11,48 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 int main()
 {
     int t = 0;
-    printf("Nhap test case: ");
+    // printf("Nhap test case: ");
     scanf("%d", &t);
     for (int i = 1; i <= t; i++)
     {
-        char keyboard[26] = {0};
+        char keyboard[27] = {0};
         char input[100] = {0};
         int index[100] = {0};
-        printf("\nNhap bang chu cai 26 ki tu: ");
-        for (int i = 0; i < 26; i++)
+        int key[129] = {0};
+        // printf("\nNhap bang chu cai 26 ki tu: ");
+        scanf("%s", keyboard);
+
+        // printf("\nNhap xau can go: ");
+        scanf("%s", input);
+        int length = strlen(input);
+        int array[length];
+        for (int i1 = 0; i1 < length; i1++)
         {
-            scanf("%c", keyboard[i]);
+            for (int i2 = 0; i2 < 26; i2++)
+            {
+                if (input[i1] == keyboard[i2])
+                {
+                    array[i1] = i2 + 1;
+                }
+            }
         }
-        printf("\nNhap xau can go: ");
-        
+        int time = 0;
+        for (int i1 = 0; i1 < (length - 1); i1++)
+        {
+            if (array[i1] < array[i1 + 1])
+            {
+                time = time + (array[i1 + 1] - array[i1]);
+            }
+            else
+            {
+                time = time + (array[i1] - array[i1 + 1]);
+            }
+        }
+        printf("%d\n", time);
     }
 }
