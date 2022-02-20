@@ -27,5 +27,7 @@ int main()
         {
             scanf("%c", keyboard[i]);
         }
+        printf("\nNhap xau can go: ");
+        
     }
 }
