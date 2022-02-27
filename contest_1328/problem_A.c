@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// https://codeforces.com/contest/1328/problem/A
+
 int main()
 {
     int a = 0, b = 0;
