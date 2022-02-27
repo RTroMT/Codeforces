@@ -21,14 +21,19 @@ int main()
         scanf("%d",&a);
         scanf("%d",&b);
         temp = b - a;
-        if(b == a)
+        if((temp == 1) && (b % 2 != 0))
+        {
+            biggest = 1;
+            printf("%d\n",biggest);
+        }
+        else if(b == a)
         {
             biggest = 0;
             printf("%d\n", biggest);
         }
         else if(temp % 2 == 0)
         {
-            if(b % 2 == 0 && (b / a) > a)
+            if(b % 2 == 0 && (b / 2) > a)
             {
                 biggest = (b % ((b/2) + 1) );
                 printf("%d\n", biggest);
@@ -43,30 +48,31 @@ int main()
         {
             if(b % 2 == 0 )
             {
-                if((b / a) > a)
-               { 
-                biggest = (b % ( (b/2) + 1));
-                printf("%d\n", biggest);
-               };
-               if((b / a) < a)
-               {
-                   biggest = b % a;
-                   printf("%d\n", biggest);
-               };
+               if((b / 2) > a)
+                  { 
+                     biggest = (b % ( (b/2) + 1));
+                     printf("%d\n", biggest);
+                  }
+               else 
+                  {
+                    biggest = b % a;
+                    printf("%d\n", biggest);
+                  };
             }
             else 
             {
-                if((b / a) > a)
+                
+                if((b / 2) > a)
                { 
                 biggest = (b % ( (b/2) + 1));
                 printf("%d\n", biggest);
-               };
-               if((b / a) < a)
+               }
+               else 
                {
-                   biggest = b % (a + 1);
+                   biggest = b % (a + 1) ;
                    printf("%d\n", biggest);
-               };
-            };
-        };
-    };
+               }
+            }
+        }
+    }
 }
