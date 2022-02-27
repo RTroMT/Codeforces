@@ -12,19 +12,12 @@ int main()
         result = 0;
         scanf("%d", &a);
         scanf("%d", &b);
-        if(a % b == 0)
+        while (a % b != 0)
         {
-            printf("%d\n", result);
+            a += 1;
+            result += 1;
         }
-        else
-        {
-            while(a % b != 0)
-            {
-                a += 1;
-                result += 1;
-            }
-            printf("%d\n", result);
-        }     
+        printf("%d\n", result);
     }   
     return 0;
 }
