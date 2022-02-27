@@ -21,7 +21,7 @@ int main()
         scanf("%d",&a);
         scanf("%d",&b);
         temp = b - a;
-        if(b == 1 && a == 1)
+        if(b == a)
         {
             biggest = 0;
             printf("%d\n", biggest);
@@ -41,17 +41,32 @@ int main()
         }
         else 
         {
-            if(b % 2 == 0 && (b / 2) > a)
+            if(b % 2 == 0 )
             {
+                if((b / a) > a)
+               { 
                 biggest = (b % ( (b/2) + 1));
                 printf("%d\n", biggest);
+               };
+               if((b / a) < a)
+               {
+                   biggest = b % a;
+                   printf("%d\n", biggest);
+               };
             }
-            else if((b/2) < a)
+            else 
             {
-                biggest = 1;
+                if((b / a) > a)
+               { 
+                biggest = (b % ( (b/2) + 1));
                 printf("%d\n", biggest);
+               };
+               if((b / a) < a)
+               {
+                   biggest = b % (a + 1);
+                   printf("%d\n", biggest);
+               };
             };
         };
     };
-    return 0;
 }
