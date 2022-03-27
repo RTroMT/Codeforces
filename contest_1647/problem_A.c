@@ -3,14 +3,18 @@
 /*
 */
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
+    char result[1000] = {0};
     int t = 0, n = 0;
     int bd = 0;
     scanf("%d", &t);
     for(int i = 0; i < t; i++)
     {
+        memset(result, 0, 1000);
+        bd = 0;
         scanf("%d", &n);
         if(n == 1)
         {
@@ -28,30 +32,47 @@ int main()
             {
                 for(int i2 = 0; i2 < (n / 3); i2++)
                 {
-                    printf("21");
-                    
+                    // printf("21");
+                    result[bd] = '2';
+                    bd++;
+                    result[bd] = '1';
+                    bd++;
                 }
+                printf("%s", result);
                 printf("\n");
+
             }
             else
             {
                 if(n % 3 == 2)
-                {    
-                    printf("2");
+                {   
+ 
+                    result[bd] = '2'; bd++;
                     for(int i3 = 0; i3 < (n/3); i3++)
                     {
-                        printf("12");
+                        // printf("12");
+                        result[bd] = '1';
+                        bd++;
+                        result[bd] = '2';
+                        bd++;
                     }
+                    printf("%s", result);
                     printf("\n");
                 }
                 else
                 {
-                     printf("1");
-                     for(int i4 = 0; i4 < (n/3); i4++)
+ 
+                    result[bd] = '1'; bd++;
+                    for(int i4 = 0; i4 < (n/3); i4++)
                      {
-                        printf("21");
+                        // printf("21");
+                        result[bd] = '2';
+                        bd++;
+                        result[bd] = '1';
+                        bd++;
                      }
-                     printf("\n");
+                     printf("%s", result);
+                    printf("\n");
                 }     
             }
         }
