@@ -26,20 +26,17 @@ int main()
         int key[129] = {0};
         // printf("\nNhap bang chu cai 26 ki tu: ");
         scanf("%s", keyboard);
-
+        for (int n = 0; n < 26; n++)
+        {
+            key[keyboard[n]] = n + 1;
+        }
         // printf("\nNhap xau can go: ");
         scanf("%s", input);
         int length = strlen(input);
         int array[length];
         for (int i1 = 0; i1 < length; i1++)
         {
-            for (int i2 = 0; i2 < 26; i2++)
-            {
-                if (input[i1] == keyboard[i2])
-                {
-                    array[i1] = i2 + 1;
-                }
-            }
+            array[i1] = key[input[i1]];
         }
         int time = 0;
         for (int i1 = 0; i1 < (length - 1); i1++)
